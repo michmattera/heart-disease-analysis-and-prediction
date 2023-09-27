@@ -65,11 +65,11 @@ This project was developed using the Cross Industry Standard Process for Data Mi
 
 ## Business Requirements
 
-The client is a Global Health Organization that would like to investigate and predict if a user would likely suffer from a heart desease or not. The client is trying to understand as well which features are more related to the prediction and why. The organization is trying to understand the pattern to be able to advert subject at risk , and take as many precautions as possible with their patients.
+The client is a Global Health Organization that would like to investigate and predict if a user would likely suffer from a heart disease or not. The client is trying to understand as well which features are more related to the prediction and why. The organization is trying to understand the pattern to be able to advert subject at risk , and take as many precautions as possible with their patients.
 The business requirements were discussed with the client .
 
-1. The client is interested in understanding the patterns from the heart desease database so that the client can learn the most relevant variables correlated to a positive heart desease prediction.
-2. The client is interested in determining if a patient would have heart desease or not.
+1. The client is interested in understanding the patterns from the heart disease database so that the client can learn the most relevant variables correlated to a positive heart desease prediction.
+2. The client is interested in determining if a patient would have heart disease or not.
 
 
 ## Hypothesis and how to validate?
