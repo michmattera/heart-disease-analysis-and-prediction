@@ -40,13 +40,13 @@ The machine and data analysis was created from the [Heart disease dataset](https
 
 To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
+1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
+2. Scroll down to the _API Key_ and click _Reveal_
 3. Copy the key
 4. In the IDE terminal, run `heroku_config`
 5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with *Regenerate API Key*.
+You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
 ## Dataset Content
 
@@ -71,24 +71,23 @@ The business requirements were discussed with the client .
 1. The client is interested in understanding the patterns from the heart disease database so that the client can learn the most relevant variables correlated to a positive heart desease prediction.
 2. The client is interested in determining if a patient would have heart disease or not.
 
-
 ## Hypothesis and how to validate?
 
-* List here your project hypothesis(es) and how you envision validating it (them)
+- List here your project hypothesis(es) and how you envision validating it (them)
 
 ## The rationale to map the business requirements to the Data Visualizations and ML tasks
 
-* List your business requirements and a rationale to map them to the Data Visualizations and ML tasks
+- List your business requirements and a rationale to map them to the Data Visualizations and ML tasks
 
 ## ML Business Case
 
-* In the previous bullet, you potentially visualized an ML task to answer a business requirement. You should frame the business case using the method we covered in the course
+- In the previous bullet, you potentially visualized an ML task to answer a business requirement. You should frame the business case using the method we covered in the course
 
 ## Dashboard Design
 
 ### Page 1: Quick project summary
 
-* Quick project summary
+- Quick project summary
   - Small heart picture
   - Project Terms & Jargon
   - Describe Project Dataset
@@ -96,7 +95,7 @@ The business requirements were discussed with the client .
 
 ### Page 2: Review Analysis Summary
 
-* After data analysis, we agreed with stakeholders that the page will:
+- After data analysis, we agreed with stakeholders that the page will:
   - State business requirement 1
   - Data inspection on the first 10 rows of the dataset used
   - Display the most correlated variables to the target and the conclusions
@@ -105,22 +104,22 @@ The business requirements were discussed with the client .
 
 ### Page 3: Review Prediction
 
-* The third page will display the second business requirement
+- The third page will display the second business requirement
   - State business requirement 2
   - Inputs with most important features
   - Each input can be modified to have different result
   - Button where client can predict the heart deseaseof a patient based on the inputs
   - After cliking the predict button , the ml pipeline will use that set of inputs for prediction. The client will have display the result, if is going to have a good review or not and the percentual.
-  
+
 ### Page 4: Hypothesis ad validation
 
-* The fourth page will have display all the hypothesis and validation for the entire project
+- The fourth page will have display all the hypothesis and validation for the entire project
   - State hypothesis
   - State validation
-  
+
 ### Page 5: Information on ML used
 
-* The fifth page will display the following:
+- The fifth page will display the following:
   - Which model was used
   - Description of the ML pipeline
   - Demonstration of features importance
@@ -128,7 +127,7 @@ The business requirements were discussed with the client .
 
 ## Unfixed Bugs
 
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
+- You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
 
 ## Deployment
 
@@ -147,7 +146,7 @@ The business requirements were discussed with the client .
 
 ## Main Data Analysis and Machine Learning Libraries
 
-* Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
+- Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
 
 ## Credits
 
@@ -167,4 +166,4 @@ The business requirements were discussed with the client .
 
 ## Acknowledgements (optional)
 
-* Thank the people that provided support through this project.
+- Thank the people that provided support through this project.
