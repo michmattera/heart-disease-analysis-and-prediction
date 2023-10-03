@@ -37,7 +37,6 @@ This machine learning project was developed for the fifth portfolio project duri
 The machine and data analysis was created from the [Heart disease dataset](https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset). The purpose of this machine learning project was to allow the user to predict heart disease based on a combination of features. In addiction it shows to the user how these features correlate with the final prediction.
 
 ## IDE Reminders
-
 To log into the Heroku toolbelt CLI:
 
 1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
