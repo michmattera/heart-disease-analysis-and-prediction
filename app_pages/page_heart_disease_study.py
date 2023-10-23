@@ -1,7 +1,6 @@
 import streamlit as st
 import numpy as np
 from feature_engine.discretisation import ArbitraryDiscretiser
-import streamlit as st
 import ppscore as pps
 from src.data_management import load_heart_disease_data
 

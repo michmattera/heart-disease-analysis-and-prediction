@@ -1,24 +1,27 @@
 import streamlit as st
-import pandas as pd
-import joblib
-import matplotlib.pyplot as plt
-from src.data_management import load_heart_disease_data, load_pkl_file
+import numpy as np
+from feature_engine.discretisation import ArbitraryDiscretiser
+import streamlit as st
+# from src.data_management import load_heart_disease_data
+from src.data_management import load_pkl_file
 
 
 def page_predict_heart_disease_body():
+
     st.write("### Heart Disease Predictor")
 
     st.info(
-        f"*This page contains an interface that allows the user "
+        f"*This page contains an interface that allows the user"
         f" to interact with the pipeline and use the model to make live predictions."
-        f"*This page completes the fulfilment of"
+        f" /n"
+        f"This page completes the fulfilment of"
         f" business requirement 2."
     )
 
     # Load all files
     version = "v1"
-    # pipeline = load_pkl_file(
-    #     f'outputs/ml_pipeline/predict_heart_disease/{version}/xgbclassifier_pipeline.pkl')
+    pipeline = load_pkl_file(
+        f"outputs/ml_pipeline/predict_heart_disease/{version}/xgb_pipeline.pkl")
     best_features = pd.read_csv(
         f"outputs/ml_pipeline/predict_heart_disease/{version}/X_train.csv").columns.to_list()
     feat_importance_image = plt.imread(
