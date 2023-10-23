@@ -15,7 +15,7 @@ def heart_disease_body():
     df = load_heart_disease_data()
 
     # hard copied from Feature Selection notebook
-    vars_to_study = ['ca', 'cp', 'exang', 'oldpeak', 'thalach', 'chol']
+    vars_to_study = ['ca', 'cp', 'exang', 'oldpeak', 'thal', 'chol']
 
     st.write("## Feature Selection Study")
     st.info(

@@ -59,7 +59,7 @@ def page_predict_heart_disease_body():
 
     # Insert 6 features to predict live
     st.write("### Predict if the patient will suffer or not from heart disease.  \n")
-    st.info("* Please enter the 6 features needed for prediction")
+    st.info("* Please enter the 6 features needed for prediction.")
 
     # create input fields for live data
     X_live = InsertLiveData()
@@ -77,7 +77,7 @@ def InsertLiveData():
     df = load_heart_disease_data()
 
     # we create input widgets for 6 features
-    # 'ca', 'cp', 'exang', 'oldpeak', 'thalach', 'chol'
+    # 'ca', 'cp', 'exang', 'oldpeak', 'thal', 'chol'
     col1, col2, col3, col4, col5, col6 = st.beta_columns(6)
 
     # create an empty DataFrame, which will contain live data
