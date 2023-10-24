@@ -5,6 +5,9 @@ from feature_engine.discretisation import ArbitraryDiscretiser
 import streamlit as st
 from src.data_management import load_heart_disease_data
 from src.data_management import load_pkl_file
+from src.machine_learning.evaluate_performance import clf_performance
+from src.machine_learning.predictive_analysis import (
+    predict_heart_disease)
 import matplotlib.pyplot as plt
 
 
@@ -65,11 +68,8 @@ def page_predict_heart_disease_body():
     X_live = InsertLiveData()
     # predict on live data
     if st.button("Run Predictive Analysis"):
-        heart_disease_prediction = pipeline.predict(
-            X_live.filter(best_features)).round(0)
-        st.write(
-            f"* The predicted disease for the patient is: {heart_disease_prediction[0]}\n"
-        )
+        predict_heart_disease(
+            X_live, best_features, pipeline)
 
 
 def InsertLiveData():
