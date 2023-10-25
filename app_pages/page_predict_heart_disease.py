@@ -24,13 +24,13 @@ def page_predict_heart_disease_body():
     )
 
     # Load all files
-    version = "v1"
+    version = "v3"
     pipeline = load_pkl_file(
         f"outputs/ml_pipeline/predict_heart_disease/{version}/xgbclassifier_pipeline.pkl")
     best_features = pd.read_csv(
         f"outputs/ml_pipeline/predict_heart_disease/{version}/X_train.csv").columns.to_list()
-    feat_importance_image = plt.imread(
-        f"outputs/ml_pipeline/predict_heart_disease/{version}/features_importance.png")
+    classification_report_image = plt.imread(
+        f"outputs/ml_pipeline/predict_heart_disease/{version}/classification_report_3.png")
     X_train = pd.read_csv(
         f"outputs/ml_pipeline/predict_heart_disease/{version}/X_train.csv")
     X_test = pd.read_csv(
