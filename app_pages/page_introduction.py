@@ -3,7 +3,7 @@ import streamlit as st
 
 def page_introduction_body():
 
-    st.write("### Quick project introduction")
+    st.write("## Quick project introduction")
 
     st.write(
         f" This ia a machine learning app to allow users to accuratly predict heart disease based on a combination of features.\n"
