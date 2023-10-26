@@ -33,10 +33,10 @@ def page_predict_heart_disease_body():
     st.write("## Heart Disease Predictor")
 
     st.info(
-        f"*This page contains an interface that allows the user"
-        f" to interact with the pipeline and use the model to make live predictions."
-        f" /n"
-        f"This page completes the fulfilment of"
+        f"* This page contains an interface that allows the user"
+        f" to interact with the pipeline and use the model to make live predictions. \n"
+        f" \n"
+        f"* This page completes the fulfilment of"
         f" business requirement 2."
     )
 

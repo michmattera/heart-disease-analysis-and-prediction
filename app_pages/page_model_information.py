@@ -53,7 +53,7 @@ def model_information_body():
 
     # Model Performance section
     st.header("Model Performance")
-    st.write("Final model performnance meet all the criteria discussed with client."
+    st.write("Final model performance meet all the criteria discussed with client."
              )
 
     st.success(

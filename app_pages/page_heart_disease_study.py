@@ -115,10 +115,6 @@ def heart_disease_body():
         f"'ca', 'cp', 'thal' \n"
         f" \n"
         f"Different combination of features were tried to found best performance. \n"
-        f" \n"
-        f"Final combination of features with best performance was actually a mix between the two study = \n"
-        f" \n"
-        f"'ca', 'cp', 'exang', 'oldpeak', 'thal', 'chol' \n"
     )
 
     # Feature importance plot
@@ -127,6 +123,12 @@ def heart_disease_body():
             f"Here you can see the three best feature found with feature importance while training the model"
         )
         st.image(features_importance_plot)
+
+    st.success(
+        f"Final combination of features with best performance was actually a mix between the two study = \n"
+        f" \n"
+        f"* 'ca', 'cp', 'exang', 'oldpeak', 'thal', 'chol' \n"
+    )
 
     # Text based on "03 - " Feature selection notebook - "EDA" section
     df_eda = df.filter(vars_to_study + ['target'])

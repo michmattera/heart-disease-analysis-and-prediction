@@ -22,6 +22,30 @@ def page_introduction_body():
         f" It is integer valued 0 = no disease and 1 = disease.\n"
     )
 
+    st.write(
+        f" Below the description for the project terms and jargon.\n"
+    )
+
+    st.info(
+        f"### Project terms and jargon\n"
+        f"* AGE = Age in years.\n "
+        f"* SEX = (1 = male; 0 = female).\n "
+        f"* CP = Chest pain type.\n "
+        f"* TRESTBPS = Resting blood pressure (in mm Hg on admission to the hospital).\n"
+        f"* CHOL = Serum cholestoral in mg/dl.\n"
+        f"* FBS = Fasting blood sugar &gt; 120 mg/dl, (1 = true; 0 = false).\n"
+        f"* RESTECG = Resting electrocardiographic results.\n"
+        f"* THALACH = Maximum heart rate achieved.\n"
+        f"* EXANG = Exercise induced angina (1 = yes; 0 = no).\n"
+        f"* OLDPEAK = ST depression induced by exercise relative to rest.\n"
+        f"* SLOPE = The slope of the peak exercise ST segment.\n"
+        f"* CA = Number of major vessels (0-3) colored by flourosopy\n"
+        f"* THAL = (1 = normal; 2 = fixed defect; 3 = reversable defect).\n"
+        f"\n"
+        f"* **TARGET** = field refers to the presence of heart disease in the patient."
+        f" It is integer valued 0 = no disease and 1 = disease.\n"
+    )
+
     st.success(
         f"### Business requirements\n"
         f"1. The client is interested in understanding the patterns from the heart disease database so that\n"
