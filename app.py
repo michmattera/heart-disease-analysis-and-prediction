@@ -12,7 +12,7 @@ app = MultiPage(app_name="Heart-disease-analysis-and-prediction")
 
 # Add app pages using .add_page()
 app.add_page("Quick Project Introduction", page_introduction_body)
-app.add_page("Heart Disease Study", heart_disease_body)
+app.add_page("Feature Selection Study", heart_disease_body)
 app.add_page("Heart Disease Prediction", page_predict_heart_disease_body)
 app.add_page("Model Information", model_information_body)
 

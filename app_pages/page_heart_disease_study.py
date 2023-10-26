@@ -11,11 +11,20 @@ sns.set_style("whitegrid")
 
 def heart_disease_body():
 
-    # load data
+    # Load all files
     df = load_heart_disease_data()
 
+    version = "v1"
+    classification_report_image = plt.imread(
+        f"outputs/ml_pipeline/predict_heart_disease/{version}/classification_report_1.png")
+    features_importance_plot = plt.imread(
+        f"outputs/ml_pipeline/predict_heart_disease/{version}/best_3_features_importance.png")
+
     # hard copied from Feature Selection notebook
-    vars_to_study = ['ca', 'cp', 'exang', 'oldpeak', 'thal', 'chol']
+    vars_to_study = ['ca', 'cp', 'exang', 'oldpeak', 'thalach', 'chol']
+
+    # hard copied from ModelAndEvaluation notebook
+    vars_to_study_two = ['ca', 'cp', 'thal']
 
     st.write("## Feature Selection Study")
     st.info(
@@ -49,7 +58,9 @@ def heart_disease_body():
         f"'ca', 'cp', 'exang', 'oldpeak', 'thalach' \n"
         f" \n"
         f"After pps heatmap analysis another important feature was found 'chol'. \n"
-        f" \n"
+    )
+
+    st.info(
         f"**It is indicated that patient that has suffer from heart disease usually does not have:** \n"
         f"* Typically has no ca ( Number of Major Vessels Colored by Fluoroscopy ). \n"
         f"* Typically has no exang ( exercise induce angina ). \n"
@@ -60,9 +71,6 @@ def heart_disease_body():
         f"* High thalach ( maximun heart rate achieved ). Starting the peak from 150 and reaaching 175 . \n"
         f"* High chol ( serum cholestoral in mg/dl ). Many patients have chol that goes from 180 to 250. \n"
     )
-
-    # Text based on "03 - " Feature selection notebook - "EDA" section
-    df_eda = df.filter(vars_to_study + ['target'])
 
     # Individual plots per variable
     if st.checkbox("Variable distribution by target"):
@@ -89,6 +97,39 @@ def heart_disease_body():
 
         )
         correlation_heatmap(df)
+
+    st.write("---")
+
+    # Feature Importance Study
+    st.write("### Feature Importance Study")
+    st.write(
+        f"A feature importance study was conducted in the notebook to better understand how "
+        f"the variables are correlated to the target. \n"
+        f" \n"
+        f"The most important variable are: **{vars_to_study_two}**"
+    )
+
+    st.info(
+        f"After feature importance study 3 variables were than found =. \n"
+        f" \n"
+        f"'ca', 'cp', 'thal' \n"
+        f" \n"
+        f"Different combination of features were tried to found best performance. \n"
+        f" \n"
+        f"Final combination of features with best performance was actually a mix between the two study = \n"
+        f" \n"
+        f"'ca', 'cp', 'exang', 'oldpeak', 'thal', 'chol' \n"
+    )
+
+    # Feature importance plot
+    if st.checkbox("Features importance plot"):
+        st.write(
+            f"Here you can see the three best feature found with feature importance while training the model"
+        )
+        st.image(features_importance_plot)
+
+    # Text based on "03 - " Feature selection notebook - "EDA" section
+    df_eda = df.filter(vars_to_study + ['target'])
 
 
 # function created from " Feature Selection notebook - "EDA" section

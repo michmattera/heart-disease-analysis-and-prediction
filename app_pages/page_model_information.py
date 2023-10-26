@@ -53,16 +53,37 @@ def model_information_body():
 
     # Model Performance section
     st.header("Model Performance")
-    st.write("Discuss how well your model performs. Include performance metrics and evaluation results. For example:")
-    st.markdown("- Accuracy, precision, recall")
-    st.markdown("- Confusion matrix")
+    st.write("Final model performnance meet all the criteria discussed with client."
+             )
 
-    st.write("### Pipeline Performance")
-    clf_performance(X_train=X_train, y_train=y_train,
-                    X_test=X_test, y_test=y_test,
-                    pipeline=pipeline,
-                    label_map=["No Disease", "Disease"])
+    st.success(
+        f"**Train set :** \n"
+        f"* Precision of no disease of 0.87 \n"
+        f"* Recall of  Disease of 0.91 \n"
+        f"* Accuracy of 0.85 \n"
+        f"\n"
+        f"All of them passing the criterias set in the business requirement of 0.85"
+    )
 
-    # Issue found by the developer and solved
-    st.warning("- Duplicates data were removed from model that was causing issue"
-               " of performance 100 % in test and train set")
+    st.success(
+        f"**Test set :** \n"
+        f"* Precision of no disease of 0.90 \n"
+        f"* Recall of  Disease of 0.93 \n"
+        f"* Accuracy of 0.85 \n"
+        f"\n"
+        f"All of them exeeding the criterias set in the business requirement of 0.85"
+        f" with a higher media than the train set reaching at least 0.90"
+    )
+
+    if st.checkbox("Confusion matrix for train and test set"):
+        st.write("### Pipeline Performance")
+        clf_performance(x_train=X_train, y_train=y_train,
+                        x_test=X_test, y_test=y_test,
+                        pipeline=pipeline,
+                        label_map=["No Disease", "Disease"])
+
+    if st.checkbox("Classification Report Heatmap"):
+        st.write(
+            f"Here you can see the classification report for the test set performance."
+        )
+        st.image(classification_report_image)
