@@ -81,7 +81,7 @@ def heart_disease_body():
             f"* Target 1: Disease \n"
 
         )
-        variable_distribution_by_target(df_eda)
+        variable_distribution_by_target(df)
 
         # Individual plots per different correlation
     if st.checkbox("Correlation heatmap"):

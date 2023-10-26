@@ -40,22 +40,12 @@ def page_predict_heart_disease_body():
         f" business requirement 2."
     )
 
-    # this is the original dataset
-    df = pd.read_csv(
-        "outputs/datasets/collection/heart.csv")
-    st.write("This is the original dataset")
-    st.write(df.head())
-
-    # filtering df just with best features
-    df = df.filter(best_features)
-    st.write("This is the dataset using just the best features. ")
-    st.write("These are the features used to train the model.")
-    st.write(df.head())
-
     # show pipeline
     st.write("---")
     st.write("#### There is 1 main Pipeline")
     st.write(" * The pipeline combine cleaning and feature engineering steps")
+    st.write(" Model was trained with combination of features described"
+             " in the feature selection study.")
     st.write(pipeline)
 
     st.write("---")
