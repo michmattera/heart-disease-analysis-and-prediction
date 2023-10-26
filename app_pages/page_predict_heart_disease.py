@@ -77,14 +77,14 @@ def InsertLiveData():
     df = load_heart_disease_data()
 
     # we create input widgets for 6 features
-    # 'ca', 'cp', 'exang', 'oldpeak', 'thal', 'chol'
+    # 'cp', 'chol','exang', 'oldpeak', 'ca', 'thal'
     col1, col2, col3, col4, col5, col6 = st.beta_columns(6)
 
     # create an empty DataFrame, which will contain live data
     X_live = pd.DataFrame([], index=[0])
 
     with col1:
-        feature = 'ca'
+        feature = 'cp'
         streamlit_widget = st.selectbox(
             label=feature,
             options=df[feature].unique()
@@ -92,7 +92,7 @@ def InsertLiveData():
     X_live[feature] = streamlit_widget
 
     with col2:
-        feature = 'cp'
+        feature = 'chol'
         streamlit_widget = st.selectbox(
             label=feature,
             options=df[feature].unique()
@@ -116,7 +116,7 @@ def InsertLiveData():
     X_live[feature] = streamlit_widget
 
     with col5:
-        feature = 'thal'
+        feature = 'ca'
         streamlit_widget = st.selectbox(
             label=feature,
             options=df[feature].unique()
@@ -124,7 +124,7 @@ def InsertLiveData():
     X_live[feature] = streamlit_widget
 
     with col6:
-        feature = 'chol'
+        feature = 'thal'
         streamlit_widget = st.selectbox(
             label=feature,
             options=df[feature].unique()
