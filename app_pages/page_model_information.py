@@ -28,15 +28,25 @@ def model_information_body():
 
     # Introduction section
     st.info(
-        "Welcome to the Machine Learning Model Dashboard."
-        " This dashboard provides an overview of our model and its performance."
-        f"\n\n"
-        "Developer tried different"
-        " approaches to find best model, with higher performance."
-        f"\n\n"
-        "Below are listed the model information , performance, different approaches"
-        " tried by the developer and plots for visual .."
+        f"Welcome to the Machine Learning Model Dashboard."
+        f" This dashboard provides an overview of our model and its performance. \n"
+        f"\n"
+        f"Developer tried different"
+        f" approaches and features to find best model, with higher performance. \n"
+        f"\n"
+        f"In this page you will find : \n"
+        f"\n"
+        f"* Model information \n"
+        f"* Model performance \n"
+        f"* Confusion matrix report \n"
+        f"* Confusion matrix heatmap \n"
     )
+
+    hyperparameters = {
+        'learning_rate': 0.01,
+        'max_depth': 3,
+        'n_estimators': 100
+    }
 
     # Model Information section
     st.header("Model Information")
@@ -46,6 +56,7 @@ def model_information_body():
     st.markdown("- Training data source : ")
     st.write(X_train)
     st.markdown("- Model hyperparameters: ")
+    st.write(hyperparameters)
 
     # show pipeline steps
     st.write("* **This is the final ML pipeline used to predict a heart disease**")
@@ -56,13 +67,21 @@ def model_information_body():
     st.write("Final model performance meet all the criteria discussed with client."
              )
 
+    st.info(
+        f" **Pass performance criteria discussed with client:** \n"
+        f"\n"
+        f"* Precision of 0.85 \n"
+        f"* Recall of 0.85 \n"
+        f"* Accuracy of minimum 0.80 \n"
+    )
+
     st.success(
         f"**Train set :** \n"
         f"* Precision of no disease of 0.87 \n"
         f"* Recall of  Disease of 0.91 \n"
         f"* Accuracy of 0.85 \n"
         f"\n"
-        f"All of them passing the criterias set in the business requirement of 0.85"
+        f"All of them passing the criterias set in the business requirement."
     )
 
     st.success(
@@ -71,8 +90,9 @@ def model_information_body():
         f"* Recall of  Disease of 0.93 \n"
         f"* Accuracy of 0.85 \n"
         f"\n"
-        f"All of them exeeding the criterias set in the business requirement of 0.85"
+        f"All of them exeeding the criterias set in the business requirement,"
         f" with a higher media than the train set reaching at least 0.90"
+        f" in precision and recall."
     )
 
     if st.checkbox("Confusion matrix for train and test set"):
