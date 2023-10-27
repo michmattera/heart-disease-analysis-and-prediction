@@ -1,6 +1,4 @@
-**Live Site:** [Live webpage]()
-
-**Link to Repository:** [Repository](https://github.com/michmattera/heart-disease-analysis-and-prediction)
+### **Live Site:** [Live webpage]()
 
 ## Table of Content
 
@@ -10,9 +8,12 @@
 - [Dataset Content](#dataset-content)
 - [CRISP-DM](#crisp-dm)
 - [Business Requirements](#business-requirements)
-- [Hypothesis and how to validate?](#hypothesis-and-how-to-validate)
 - [The rationale to map the business requirements to the Data Visualizations and ML tasks](#the-rationale-to-map-the-business-requirements-to-the-data-visualizations-and-ml-tasks)
+  - [Business Requirement 1: Data Visualization and Correlation study.](#business-requirement-1-data-visualization-and-correlation-study)
+  - [Business requirement 2: Predict Heart Disease](#business-requirement-2-predict-heart-disease)
 - [ML Business Case](#ml-business-case)
+  - [ML business case is structured as follows](#ml-business-case-is-structured-as-follows)
+- [Hypothesis and how to validate](#hypothesis-and-how-to-validate)
 - [Dashboard Design](#dashboard-design)
   - [Page 1: Quick project summary](#page-1-quick-project-summary)
   - [Page 2: Review Analysis Summary](#page-2-review-analysis-summary)
@@ -50,37 +51,39 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 ## Dataset Content
 
-The dataset is sourse from [Kaggle](https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset)
+The dataset is sourse from [Kaggle heart disease dataset](https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset).
+The dataset used in this project is publically available on the Kaggle website, it is from 1988 and consists of four databases: Cleveland, Hungary, Switzerland, and Long Beach V.
 
-|Variable|Meaning|Units|
-|:---|:---|:---|
-|AGE|Age in years|0 to 100|
-|SEX|Gender|(1 = male; 0 = female)|
-|CP|Chest pain type, from no pain to maximum pain|0 to 3|
-|TRESTBPS|Resting blood pressure on admission|mm Hg (millimeters of mercury)|
-|CHOL|Serum cholestoral|mg/dl (milligrams per deciliter)|
-|FBS|Fasting blood sugar (> 120 mg/dl)|(1 = true; 0 = false)|
-|RESTECG|Resting electrocardiographic results||
-|THALACH|Maximum heart rate achieved||
-|EXANG|Exercise-induced angina|(1 = yes; 0 = no)|
-|OLDPEAK|ST depression induced by exercise relative to rest||
-|SLOPE|The slope of the peak exercise ST segment||
-|CA|Number of major vessels colored by fluoroscopy|(0-3)|
-|THAL|Thalassemia|(1 = normal; 2 = fixed defect; 3 = reversible defect)|
-|TARGET|Presence of heart disease in the patient|(0 = no disease; 1 = disease)|
+It contains 76 attributes, 1025 entries, including the predicted attribute,but all published experiments refer to using a subset of 14 of them.
 
-
+| Variable | Meaning                                            | Units                                                                                        |
+| :------- | :------------------------------------------------- | :------------------------------------------------------------------------------------------- |
+| AGE      | Age in years                                       | 0 to 100                                                                                     |
+| SEX      | Gender                                             | (1 = male; 0 = female)                                                                       |
+| CP       | Chest pain type, from no pain to maximum pain      | 0 to 3                                                                                       |
+| TRESTBPS | Resting blood pressure on admission                | mm Hg (millimeters of mercury)                                                               |
+| CHOL     | Serum cholestoral                                  | mg/dl (milligrams per deciliter)                                                             |
+| FBS      | Fasting blood sugar (> 120 mg/dl)                  | (1 = true; 0 = false)                                                                        |
+| RESTECG  | Resting electrocardiographic results               | (0= normal: 1= Abnormality in the T-wave/ST-T wave: 2=definite left ventricular hypertrophy) |
+| THALACH  | Maximum heart rate achieved                        | beats per minute (BPM)                                                                       |
+| EXANG    | Exercise-induced angina                            | (1 = yes; 0 = no)                                                                            |
+| OLDPEAK  | ST depression induced by exercise relative to rest | 0 to 6.20                                                                                    |
+| SLOPE    | The slope of the peak exercise ST segment          | (0: Upsloping: 1= Flat: 2= Downsloping)                                                      |
+| CA       | Number of major vessels colored by fluoroscopy     | (0-3)                                                                                        |
+| THAL     | Thalassemia                                        | (1 = normal; 2 = fixed defect; 3 = reversible defect)                                        |
+| TARGET   | Presence of heart disease in the patient           | (0 = no disease; 1 = disease)                                                                |
 
 ## CRISP-DM
 
 This project was developed using the Cross Industry Standard Process for Data Mining. Developer choose to divide the steps following an agile method and dividing the steps in Epics.
 
-1. Epic 1: Business Understanding - This incorporates understanding the clients business case, usually through a conversation with the client where it is establish the business case and decide together the acceptance criteria.
-2. Epic 2: Data Understanding - The data needed to achieve the business requirements must be identified and understood. After data collection the data needs to be find, cleaned and checked if with the data is possible to solve or be used for the business requirements discussed above.
-3. Epic 3: Data Preparation - .
-4. Epic 4: Modelling - .
-5. Epic 5: Evaluation - .
-6. Epic 6: Deployment - Develop the streamlit app that will satisfy the business requirements determined in collaboration with the client and deploy the app online. The app is deployed in Heroku and the process is described in the Deployment section below.
+1. **Epic 1: Business Understanding** - This incorporates understanding the clients business case, usually through a conversation with the client where it is establish the business case and decide together the acceptance criteria.
+2. **Epic 2: Data Understanding** - The data needed to achieve the business requirements must be identified and understood. if with the data is possible to solve or be used for the business requirements discussed above.
+3. **Epic 3: Data Preparation** - After data collection the data needs to be cleaned and checked. Meaning eliminate duplicates, missing values and unbalanced target. Then split in train and test set and saved to be used.
+4. **Epic 4: Feature Selection and feature engineering** - In this process developer understand with correlation analysis and feature importance the most important variables, that can be than used for modeling.
+5. **Epic 5: Modelling** - Modeling is a crucial step to develop a good ML and high performance. In thise process we find the best model and best hyperparameter. This is a repititive process where different combination of features are used to train the model.
+6. **Epic 6: Evaluation** - Here we fit the model , and using confusion matrix and heatmaps we evaluate the performance. Deciding if performance meet the business assesment criteria.
+7. **Epic 7: Deployment** - Develop the streamlit app that will satisfy the business requirements determined in collaboration with the client and deploy the app online. The app is deployed in Heroku and the process is described in the Deployment section below.
 
 ## Business Requirements
 
@@ -90,17 +93,69 @@ The business requirements were discussed with the client .
 1. The client is interested in understanding the patterns from the heart disease database so that the client can learn the most relevant variables correlated to a positive heart desease prediction.
 2. The client is interested in determining if a patient would have heart disease or not.
 
-## Hypothesis and how to validate?
-
-- List here your project hypothesis(es) and how you envision validating it (them)
-
 ## The rationale to map the business requirements to the Data Visualizations and ML tasks
 
-- List your business requirements and a rationale to map them to the Data Visualizations and ML tasks
+### Business Requirement 1: Data Visualization and Correlation study.
+
+To answer the first business requirement a correlation study was used to find most correlated variable to the target.
+
+- **Spearman**
+- **Pearson**
+- **PPS analysis**
+
+After spearman and pearson 5 variable in common were selected : ['ca','cp','exang','oldpeak','thalach'].
+Another variable that had a high predictive power was considered after pps analysis : ['chol'].
+
+Second approach was studying each variable and how it correlate with the target.
+
+Third approach feature importance study that highlight just 3 variables : ['ca','cp','thal'].
+
+Difference between the 2 sets of just 1 variable ['thal'].
+
+**These 7 features were the one after analyze the data that were more correlated with the target**
+
+### Business requirement 2: Predict Heart Disease
+
+Second business eequirement was answered building a ML model that predict if a patient will suffer from heart disease or not.
+Details of ML model found below.
+
 
 ## ML Business Case
+### ML business case is structured as follows
 
-- In the previous bullet, you potentially visualized an ML task to answer a business requirement. You should frame the business case using the method we covered in the course
+1. **Is there a business requirement that can be answered with conventional data analysis?**  
+     - Conventional data analysis is used to explore the correlation between the attributes and the target. And answer the first business requirement.
+2. **Dashboard or API Endpoint:**
+     - The client specifically requires a dashboard to visualize the insights and predictions.
+3. **Successful Project Outcome for the Client:**
+     - The client considers the project successful if it provides a comprehensive study showcasing the most relevant variables correlated with the target.
+     - Additionally, the ability to accurately predict if a patient will likely suffer from heart disease or not.
+4. **Ethical or Privacy Concerns:**
+     - No ethical or privacy concerns are identified since the client is utilizing a publicly available dataset.
+5. **Suggested Model:**
+     - Based on the data, a classification model is suggested, where target variable is a binary variable, and we want to predict if is likely going to be 0 or 1 and not a continuos number.
+6. **Model Inputs and Intended Outputs:**
+     - The model will take patient attribute information as inputs (specifically our 6 best variables) and provide the prediction if the patient will suffer from heart disease or not.
+7. **Performance Goal Criteria:**
+     - The agreed-upon performance goal for the predictions is:
+        -  accuracy of at least 0.8 on both the train and test sets.
+        -  Precision of no disease of 0.85
+        -  Recall of Disease of 0.85
+     - All criteria were met in both train and test set.
+     - Train set :
+
+        1. Precision of no disease of 0.87
+        2. Recall of Disease of 0.91
+        3. Accuracy of 0.85
+     - Test set :
+
+        1. Precision of no disease of 0.90
+        2. Recall of Disease of 0.93
+        3. Accuracy of 0.85
+
+ ## Hypothesis and how to validate
+
+-
 
 ## Dashboard Design
 
