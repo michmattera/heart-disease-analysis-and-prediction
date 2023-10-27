@@ -65,10 +65,12 @@ def page_predict_heart_disease_body():
 def InsertLiveData():
 
     df = load_heart_disease_data()
+    percentageMin, percentageMax = 0.4, 2.0
 
     # we create input widgets for 6 features
     # 'cp', 'chol','exang', 'oldpeak', 'ca', 'thal'
-    col1, col2, col3, col4, col5, col6 = st.beta_columns(6)
+    col1, col2, col3 = st.beta_columns(3)
+    col4, col5, col6 = st.beta_columns(3)
 
     # create an empty DataFrame, which will contain live data
     X_live = pd.DataFrame([], index=[0])
@@ -77,15 +79,19 @@ def InsertLiveData():
         feature = 'cp'
         streamlit_widget = st.selectbox(
             label=feature,
-            options=df[feature].unique()
+            options=df[feature].unique(),
+            key="cp_selectbox"
         )
     X_live[feature] = streamlit_widget
 
     with col2:
         feature = 'chol'
-        streamlit_widget = st.selectbox(
+        streamlit_widget = st.number_input(
             label=feature,
-            options=df[feature].unique()
+            min_value=df[feature].min()*percentageMin,
+            max_value=df[feature].max()*percentageMax,
+            value=df[feature].median(),
+            key="chol_number_input"
         )
     X_live[feature] = streamlit_widget
 
@@ -93,15 +99,19 @@ def InsertLiveData():
         feature = 'exang'
         streamlit_widget = st.selectbox(
             label=feature,
-            options=df[feature].unique()
+            options=df[feature].unique(),
+            key="exang_selectbox"
         )
     X_live[feature] = streamlit_widget
 
     with col4:
         feature = 'oldpeak'
-        streamlit_widget = st.selectbox(
+        streamlit_widget = st.number_input(
             label=feature,
-            options=df[feature].unique()
+            min_value=df[feature].min()*percentageMin,
+            max_value=df[feature].max()*percentageMax,
+            value=df[feature].median(),
+            key="oldpeak_number_input"
         )
     X_live[feature] = streamlit_widget
 
@@ -109,7 +119,8 @@ def InsertLiveData():
         feature = 'ca'
         streamlit_widget = st.selectbox(
             label=feature,
-            options=df[feature].unique()
+            options=df[feature].unique(),
+            key="ca_selectbox"
         )
     X_live[feature] = streamlit_widget
 
@@ -117,7 +128,8 @@ def InsertLiveData():
         feature = 'thal'
         streamlit_widget = st.selectbox(
             label=feature,
-            options=df[feature].unique()
+            options=df[feature].unique(),
+            key="thal_selectbox"
         )
     X_live[feature] = streamlit_widget
 

@@ -113,7 +113,7 @@ def page_hypothesis_and_validation_body():
 
     # Hypothesis 8 - Age
     st.warning(
-        f"Hypothesis 7: \n"
+        f"Hypothesis 8: \n"
         f" \n"
         f"A specific range of age exhibits a higher susceptibility to the condition than the other. "
         f"It is hypothesized that the age of the patient is a significant risk factor. \n"

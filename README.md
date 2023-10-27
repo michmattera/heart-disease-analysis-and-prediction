@@ -52,6 +52,25 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 The dataset is sourse from [Kaggle](https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset)
 
+|Variable|Meaning|Units|
+|:---|:---|:---|
+|AGE|Age in years|0 to 100|
+|SEX|Gender|(1 = male; 0 = female)|
+|CP|Chest pain type, from no pain to maximum pain|0 to 3|
+|TRESTBPS|Resting blood pressure on admission|mm Hg (millimeters of mercury)|
+|CHOL|Serum cholestoral|mg/dl (milligrams per deciliter)|
+|FBS|Fasting blood sugar (> 120 mg/dl)|(1 = true; 0 = false)|
+|RESTECG|Resting electrocardiographic results||
+|THALACH|Maximum heart rate achieved||
+|EXANG|Exercise-induced angina|(1 = yes; 0 = no)|
+|OLDPEAK|ST depression induced by exercise relative to rest||
+|SLOPE|The slope of the peak exercise ST segment||
+|CA|Number of major vessels colored by fluoroscopy|(0-3)|
+|THAL|Thalassemia|(1 = normal; 2 = fixed defect; 3 = reversible defect)|
+|TARGET|Presence of heart disease in the patient|(0 = no disease; 1 = disease)|
+
+
+
 ## CRISP-DM
 
 This project was developed using the Cross Industry Standard Process for Data Mining. Developer choose to divide the steps following an agile method and dividing the steps in Epics.

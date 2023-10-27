@@ -16,10 +16,7 @@ def page_introduction_body():
         f"it is from 1988 and consists of four databases: Cleveland, Hungary, Switzerland, and Long Beach V.\n"
         f"\n"
         f"It contains 76 attributes, 1025 entries, including the predicted attribute,"
-        f"but all published experiments refer to using a subset of 14 of them.\n"
-        f"\n"
-        f"The **target** field refers to the presence of heart disease in the patient."
-        f" It is integer valued 0 = no disease and 1 = disease.\n"
+        f"but all published experiments refer to using a subset of 14 of them."
     )
 
     st.write(
