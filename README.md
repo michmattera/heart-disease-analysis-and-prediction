@@ -16,8 +16,8 @@
 - [Hypothesis and how to validate](#hypothesis-and-how-to-validate)
 - [Dashboard Design](#dashboard-design)
   - [Page 1: Quick project summary](#page-1-quick-project-summary)
-  - [Page 2: Review Analysis Summary](#page-2-review-analysis-summary)
-  - [Page 3: Review Prediction](#page-3-review-prediction)
+  - [Page 2: Heart Disease Analysis Summary](#page-2-heart-disease-analysis-summary)
+  - [Page 3: Heart Disease Prediction](#page-3-heart-disease-prediction)
   - [Page 4: Hypothesis ad validation](#page-4-hypothesis-ad-validation)
   - [Page 5: Information on ML used](#page-5-information-on-ml-used)
 - [Unfixed Bugs](#unfixed-bugs)
@@ -25,9 +25,7 @@
   - [Heroku](#heroku)
 - [Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
 - [Credits](#credits)
-  - [Content](#content)
-  - [Media](#media)
-- [Acknowledgements (optional)](#acknowledgements-optional)
+- [Acknowledgements](#acknowledgements)
 
 **Developed by: Michelle Mattera**
 
@@ -138,9 +136,10 @@ Details of ML model found below.
      - The model will take patient attribute information as inputs (specifically our 6 best variables) and provide the prediction if the patient will suffer from heart disease or not.
 7. **Performance Goal Criteria:**
      - The agreed-upon performance goal for the predictions is:
-        -  accuracy of at least 0.8 on both the train and test sets.
-        -  Precision of no disease of 0.85
-        -  Recall of Disease of 0.85
+        1. accuracy of at least 0.8 on both the train and test sets.
+        2.  Precision of no disease of 0.85
+        3. Recall of Disease of 0.85
+         
      - All criteria were met in both train and test set.
      - Train set :
 
@@ -162,28 +161,28 @@ Details of ML model found below.
 ### Page 1: Quick project summary
 
 - Quick project summary
-  - Small heart picture
   - Project Terms & Jargon
   - Describe Project Dataset
   - State Business Requirements
+  - Link for GitHub ReadMe file for more info
 
-### Page 2: Review Analysis Summary
+### Page 2: Heart Disease Analysis Summary
 
 - After data analysis, we agreed with stakeholders that the page will:
   - State business requirement 1
   - Data inspection on the first 10 rows of the dataset used
   - Display the most correlated variables to the target and the conclusions
   - Checkbox: Showing first correlation study
-  - Checkbox: Showing second correlation study
+  - Checkbox: Showing second feature importance study
 
-### Page 3: Review Prediction
+### Page 3: Heart Disease Prediction
 
 - The third page will display the second business requirement
-  - State business requirement 2
+  - ML pipeline used
   - Inputs with most important features
   - Each input can be modified to have different result
-  - Button where client can predict the heart deseaseof a patient based on the inputs
-  - After cliking the predict button , the ml pipeline will use that set of inputs for prediction. The client will have display the result, if is going to have a good review or not and the percentual.
+  - Button where client can predict the heart desease of a patient based on the inputs
+  - After cliking the predict button , the ml pipeline will use that set of inputs for prediction. The client will have display the result, if is going to likely suffer from heart disease or not and the percentual.
 
 ### Page 4: Hypothesis ad validation
 
@@ -194,14 +193,15 @@ Details of ML model found below.
 ### Page 5: Information on ML used
 
 - The fifth page will display the following:
-  - Which model was used
   - Description of the ML pipeline
-  - Demonstration of features importance
-  - Performance overview
+  - Model information
+  - Model performance
+  - Confusion matrix for train and test set
+  - Heatmap to provide a visual means to identify trends
 
 ## Unfixed Bugs
 
-- You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
+- No bugs unfixed
 
 ## Deployment
 
@@ -220,24 +220,13 @@ Details of ML model found below.
 
 ## Main Data Analysis and Machine Learning Libraries
 
-- Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
+
 
 ## Credits
 
-- In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism.
-- You can break the credits section up into Content and Media, depending on what you have included in your project.
+- A number of code cells were either borrowed or adapted from the Walkthrough project 'Churnometer' by Code Institute.
 
-### Content
 
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-
-### Media
-
-- The photos used on the home and sign-up page are from This Open-Source site
-- The images used for the gallery page were taken from this other open-source site
-
-## Acknowledgements (optional)
+## Acknowledgements
 
 - Thank the people that provided support through this project.
