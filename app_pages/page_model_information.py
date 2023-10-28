@@ -137,13 +137,13 @@ def create_qq_plot():
         transformed_variable = transformed_data[variable]
 
         # Plot Q-Q plot for original data
-        plt.figure(figsize=(6, 4))
+        plt.figure(figsize=(6, 3))
         stats.probplot(original_data, dist='norm', plot=plt)
         plt.title(f'Q-Q Plot for Original {variable}')
         st.pyplot(plt)
 
         # Plot Q-Q plot for transformed data
-        plt.figure(figsize=(6, 4))
+        plt.figure(figsize=(6, 3))
         stats.probplot(transformed_variable, dist='norm', plot=plt)
         plt.title(f'Q-Q Plot for Transformed {variable}')
         st.pyplot(plt)
