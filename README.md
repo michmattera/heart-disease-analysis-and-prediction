@@ -13,6 +13,10 @@
   - [Business requirement 2: Predict Heart Disease](#business-requirement-2-predict-heart-disease)
 - [ML Business Case](#ml-business-case)
   - [ML business case is structured as follows](#ml-business-case-is-structured-as-follows)
+- [Models](#models)
+  - [First model](#first-model)
+  - [Second model](#second-model)
+  - [Final model information](#final-model-information)
 - [Hypothesis and how to validate](#hypothesis-and-how-to-validate)
 - [Dashboard Design](#dashboard-design)
   - [Page 1: Quick project summary](#page-1-quick-project-summary)
@@ -110,7 +114,9 @@ Third approach feature importance study that highlight just 3 variables : ['ca',
 
 Difference between the 2 sets of just 1 variable ['thal'].
 
-**These 7 features were the one after analyze the data that were more correlated with the target**
+Final features selected to train and fit model were actually a mix between the 2:
+
+**'ca', 'cp', 'exang', 'oldpeak', 'thal', 'chol'**
 
 ### Business requirement 2: Predict Heart Disease
 
@@ -153,11 +159,68 @@ Details of ML model found below.
      2. Recall of Disease of 0.93
      3. Accuracy of 0.85
 
+    <details>
+    <summary> Performance test set:</summary>
+
+   ![Heatmap confusion matrix test set](outputs/ml_pipeline/predict_heart_disease/v3/classification_report_3.png)
+
+    </details>
+
+## Models
+
+Three different model were considered to reach best performance.
+
+After answering the first business requirement, developer find best hyperparameter and best model that could fit at best the dataset.
+
+- **Model** : xgbclassifier
+- **Hyperparameter** : {
+  "learning_rate":0.01
+  "max_depth":3
+  "n_estimators":100
+  }
+
+These were selected with an exstensive search to find best model and hyperparameter, using a grid search.
+
+The combination of features were the one that was most difficult to find. All models has same parameters .
+
+The first model was actually found using all features, and had a very high performance . But to improve client experience and improve speed developer tried to find an alternative using just few features.
+
+### First model
+
+The first model was tried using the three best features, found with feature importance .
+But the performance dropped by almost 10% in all aspect, accuracy, recall and precision , so it was not selected as best model.
+Below the heatmap report of the confusion test set using these 3 best features.
+
+<details>
+<summary> Performance test set:</summary>
+
+![Heatmap confusion matrix test set 1](outputs/ml_pipeline/predict_heart_disease/v1/classification_report_1.png)
+
+</details>
+
+<details>
+<summary> X test set:</summary>
+
+![X test set 1](outputs/ml_pipeline/predict_heart_disease/v1/X_test.csv)
+
+</details>
+
+<details>
+<summary> Feature importance plot:</summary>
+
+![Feature importance plot](outputs/ml_pipeline/predict_heart_disease/v1/best_3_features_importance.png)
+
+</details>
+
+### Second model
+
+### Final model information
+
 ## Hypothesis and how to validate
 
 Different hypothesis were created for this project. Some of them were validated while other were confutated.
 
-Most of the hypothesys were confirmed or not using conventional data analysis, in the (Feature Selection Notebook)[https://github.com/michmattera/heart-disease-analysis-and-prediction/blob/main/jupyter_notebooks/FeatureSelection.ipynb].
+Most of the hypothesis were confirmed or not using conventional data analysis, in the [Feature Selection Notebook](https://github.com/michmattera/heart-disease-analysis-and-prediction/blob/main/jupyter_notebooks/FeatureSelection.ipynb)
 
 1. Hypothesis 1:
    - Patients who have suffered from heart disease typically do not have a significant number of major vessels colored by fluoroscopy (ca). It is hypothesized that a lower count of major vessels colored may be associated with heart disease.
