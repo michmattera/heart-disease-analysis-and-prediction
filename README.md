@@ -117,44 +117,72 @@ Difference between the 2 sets of just 1 variable ['thal'].
 Second business eequirement was answered building a ML model that predict if a patient will suffer from heart disease or not.
 Details of ML model found below.
 
-
 ## ML Business Case
+
 ### ML business case is structured as follows
 
-1. **Is there a business requirement that can be answered with conventional data analysis?**  
-     - Conventional data analysis is used to explore the correlation between the attributes and the target. And answer the first business requirement.
+1. **Is there a business requirement that can be answered with conventional data analysis?**
+   - Conventional data analysis is used to explore the correlation between the attributes and the target. And answer the first business requirement.
 2. **Dashboard or API Endpoint:**
-     - The client specifically requires a dashboard to visualize the insights and predictions.
+   - The client specifically requires a dashboard to visualize the insights and predictions.
 3. **Successful Project Outcome for the Client:**
-     - The client considers the project successful if it provides a comprehensive study showcasing the most relevant variables correlated with the target.
-     - Additionally, the ability to accurately predict if a patient will likely suffer from heart disease or not.
+   - The client considers the project successful if it provides a comprehensive study showcasing the most relevant variables correlated with the target.
+   - Additionally, the ability to accurately predict if a patient will likely suffer from heart disease or not.
 4. **Ethical or Privacy Concerns:**
-     - No ethical or privacy concerns are identified since the client is utilizing a publicly available dataset.
+   - No ethical or privacy concerns are identified since the client is utilizing a publicly available dataset.
 5. **Suggested Model:**
-     - Based on the data, a classification model is suggested, where target variable is a binary variable, and we want to predict if is likely going to be 0 or 1 and not a continuos number.
+   - Based on the data, a classification model is suggested, where target variable is a binary variable, and we want to predict if is likely going to be 0 or 1 and not a continuos number.
 6. **Model Inputs and Intended Outputs:**
-     - The model will take patient attribute information as inputs (specifically our 6 best variables) and provide the prediction if the patient will suffer from heart disease or not.
+   - The model will take patient attribute information as inputs (specifically our 6 best variables) and provide the prediction if the patient will suffer from heart disease or not.
 7. **Performance Goal Criteria:**
-     - The agreed-upon performance goal for the predictions is:
-        1. accuracy of at least 0.8 on both the train and test sets.
-        2.  Precision of no disease of 0.85
-        3. Recall of Disease of 0.85
-         
-     - All criteria were met in both train and test set.
-     - Train set :
 
-        1. Precision of no disease of 0.87
-        2. Recall of Disease of 0.91
-        3. Accuracy of 0.85
-     - Test set :
+   - The agreed-upon performance goal for the predictions is:
+     1. accuracy of at least 0.8 on both the train and test sets.
+     2. Precision of no disease of 0.85
+     3. Recall of Disease of 0.85
+   - All criteria were met in both train and test set.
+   - Train set :
 
-        1. Precision of no disease of 0.90
-        2. Recall of Disease of 0.93
-        3. Accuracy of 0.85
+     1. Precision of no disease of 0.87
+     2. Recall of Disease of 0.91
+     3. Accuracy of 0.85
 
- ## Hypothesis and how to validate
+   - Test set :
 
--
+     1. Precision of no disease of 0.90
+     2. Recall of Disease of 0.93
+     3. Accuracy of 0.85
+
+## Hypothesis and how to validate
+
+Different hypothesis were created for this project. Some of them were validated while other were confutated.
+
+Most of the hypothesys were confirmed or not using conventional data analysis, in the (Feature Selection Notebook)[https://github.com/michmattera/heart-disease-analysis-and-prediction/blob/main/jupyter_notebooks/FeatureSelection.ipynb].
+
+1. Hypothesis 1:
+   - Patients who have suffered from heart disease typically do not have a significant number of major vessels colored by fluoroscopy (ca). It is hypothesized that a lower count of major vessels colored may be associated with heart disease.
+   - **Correct** : After analysis of data heart disease patients tend to have a lower count of major vessels.
+2. Hypothesis 2:
+   - Patients with heart disease typically do not experience exercise-induced angina (exang). It is hypothesized that the absence of exercise-induced angina may be a characteristic of heart disease patients.
+   - **Correct** : After analysis of data heart disease patients tend to not have experienced exang.
+3. Hypothesis 3:
+   - Patients with heart disease typically do not have a high ST depression induced by exercise relative to rest (oldpeak). It is hypothesized that a lower oldpeak value may be indicative of heart disease.
+   - **Correct** : After analysis of data heart disease patients tend to have lower oldpeak.
+4. Hypothesis 4:
+   - Heart disease patients tend to have a higher level of chest pain (cp). It is hypothesized that an increase in chest pain level is associated with a higher likelihood of heart disease.
+   - **Correct** : After analysis of data heart disease patients tend to have a chest pain level of at least 2.
+5. Hypothesis 5:
+   - Patients with heart disease typically achieve a higher maximum heart rate (thalach). It is hypothesized that a higher maximum heart rate is associated with a higher likelihood of heart disease.
+   - **Correct** : After analysis of data heart disease patients tend to have higher heart rate, with more patients having from 150 and reaaching 175.
+6. Hypothesis 6:
+   - Heart disease patients often have serum cholesterol levels (chol) very high. It is hypothesized that higher cholesterol levels may be associated with a higher risk of heart disease.
+   - **Correct** : After analysis of data heart disease patients tend to have a higher cholesterol ranging from 180 to 300 mg/dl, reaching in rare occasion even 400 and 500 mg/dl.
+7. Hypothesis 7:
+   - One gender exhibits a higher susceptibility to the condition than the other. It is hypothesized that the gender of the patient is a significant risk factor.
+   - **Incorrect** : After analysis, the feature 'sex' have limited predictive power in the specific context of the problem. It means that it doesn't provide much information that helps the model distinguish between different outcomes (e.g., the presence or absence of heart disease).
+8. Hypothesis 8:
+   - A specific range of age exhibits a higher susceptibility to the condition than the other. It is hypothesized that the age of the patient is a significant risk factor.
+   - **Incorrect** : After analysis, the feature 'age' have limited predictive power in the specific context of the problem. It means that it doesn't provide much information that helps the model distinguish between different outcomes (e.g., the presence or absence of heart disease). Even if it was discovered that patients that suffer from heart disease often relate with a patient of age from 45 to 55.
 
 ## Dashboard Design
 
@@ -220,12 +248,9 @@ Details of ML model found below.
 
 ## Main Data Analysis and Machine Learning Libraries
 
-
-
 ## Credits
 
 - A number of code cells were either borrowed or adapted from the Walkthrough project 'Churnometer' by Code Institute.
-
 
 ## Acknowledgements
 
