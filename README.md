@@ -188,20 +188,18 @@ The first model was actually found using all features, and had a very high perfo
 ### First model
 
 The first model was tried using the three best features, found with feature importance .
-But the performance dropped by almost 10% in all aspect, accuracy, recall and precision , so it was not selected as best model.
+But the performance dropped by almost 10% in all aspects. So it was not selected as best model.
+
+- accuracy
+- recall
+- precision
+
 Below the heatmap report of the confusion test set using these 3 best features.
 
 <details>
 <summary> Performance test set:</summary>
 
 ![Heatmap confusion matrix test set 1](outputs/ml_pipeline/predict_heart_disease/v1/classification_report_1.png)
-
-</details>
-
-<details>
-<summary> X test set:</summary>
-
-![X test set 1](outputs/ml_pipeline/predict_heart_disease/v1/X_test.csv)
 
 </details>
 
@@ -214,7 +212,37 @@ Below the heatmap report of the confusion test set using these 3 best features.
 
 ### Second model
 
+The second model was tried using the 6 best features, found with correlation analysis.
+But the performance dropped by almost 10% in all aspects, similar to the model with just 3 features. So it was not selected as best model.
+
+- accuracy
+- recall
+- precision
+
+Below the heatmap report of the confusion test set using these 3 best features.
+
+<details>
+<summary> Performance test set:</summary>
+
+![Heatmap confusion matrix test set 1](outputs/ml_pipeline/predict_heart_disease/v1/classification_report_1.png)
+
+</details>
+
 ### Final model information
+
+The final model was tried using 6 features, this combination of features was actually found mixing the two combination of features tried for the other models.
+This was the model that perform very well, with a very low difference between this and the model used all features. Developer chose this as the best model.
+
+Below the heatmap report of the confusion test set using these 6 features:
+
+- 'ca', 'cp', 'exang', 'oldpeak', 'thal', 'chol'
+
+<details>
+<summary> Performance test set:</summary>
+
+![Heatmap confusion matrix test set 1](outputs/ml_pipeline/predict_heart_disease/v3/classification_report_3.png)
+
+</details>
 
 ## Hypothesis and how to validate
 
