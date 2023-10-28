@@ -94,7 +94,6 @@ The business requirements were discussed with the client .
 1. The client is interested in understanding the patterns from the heart disease database so that the client can learn the most relevant variables correlated to a positive heart desease prediction.
 2. The client is interested in determining if a patient would have heart disease or not.
 
-
 ### Business Requirement 1: Data Visualization and Correlation study.
 
 As a client, I want to gain insights into the factors influencing a patient suffering from heart disease. To fulfill this requirement, the following user stories have been addressed:
@@ -124,7 +123,6 @@ Final features selected to train and fit model were actually a mix between the 2
 
 ### Business requirement 2: Predict Heart Disease
 
-
 As a client, I want to accurately predict if a patient will suffer from heart disease or not. To fulfill this requirement, the following user stories have been addressed:
 
 - As a client, I want to access and analyze the records and the features uded to train the model to understand which variable i need for an accurate prediction.
@@ -133,7 +131,6 @@ As a client, I want to accurately predict if a patient will suffer from heart di
 
 Second business eequirement was answered building a ML model that predict if a patient will suffer from heart disease or not.
 Details of ML model found below.
-
 
 ## ML Business Case
 
@@ -351,7 +348,66 @@ Most of the hypothesis were confirmed or not using conventional data analysis, i
 
 ## Main Data Analysis and Machine Learning Libraries
 
-
+altair==4.2.2
+astor==0.8.1
+backports.zoneinfo==0.2.1
+base58==2.1.1
+blinker==1.6.2
+cachetools==5.3.1
+click==7.1.2
+contourpy==1.0.7
+cycler==0.11.0
+dacite==1.8.1
+entrypoints==0.4
+feature-engine==1.6.0
+fonttools==4.39.4
+htmlmin==0.1.12
+ImageHash==4.3.1
+imbalanced-learn==0.10.1
+imblearn==0.0
+ipywidgets==8.0.6
+joblib==1.2.0
+jupyterlab-widgets==3.0.7
+kaggle==1.5.12
+kiwisolver==1.4.4
+matplotlib==3.7.1
+multimethod==1.9.1
+networkx==3.1
+numpy==1.23.5
+pandas==1.5.3
+patsy==0.5.3
+phik==0.12.3
+Pillow==9.5.0
+ppscore==1.3.0
+protobuf==3.20.0
+pyarrow==12.0.0
+pydantic==1.10.8
+pydeck==0.8.1b0
+pyparsing==3.0.9
+python-slugify==8.0.1
+pytz==2023.3
+PyWavelets==1.4.1
+scikit-learn==1.2.2
+scipy==1.10.1
+seaborn==0.12.2
+statsmodels==0.14.0
+streamlit==0.85.0
+tangled-up-in-unicode==0.2.0
+text-unidecode==1.3
+threadpoolctl==3.1.0
+toml==0.10.2
+toolz==0.12.0
+tqdm==4.65.0
+typeguard==2.13.3
+tzdata==2023.3
+tzlocal==5.0.1
+validators==0.20.0
+visions==0.7.5
+watchdog==3.0.0
+widgetsnbextension==4.0.7
+wordcloud==1.9.2
+xgboost==1.7.5
+ydata-profiling==4.2.0
 
 ## Credits
 
