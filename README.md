@@ -8,7 +8,6 @@
 - [Dataset Content](#dataset-content)
 - [CRISP-DM](#crisp-dm)
 - [Business Requirements](#business-requirements)
-- [The rationale to map the business requirements to the Data Visualizations and ML tasks](#the-rationale-to-map-the-business-requirements-to-the-data-visualizations-and-ml-tasks)
   - [Business Requirement 1: Data Visualization and Correlation study.](#business-requirement-1-data-visualization-and-correlation-study)
   - [Business requirement 2: Predict Heart Disease](#business-requirement-2-predict-heart-disease)
 - [ML Business Case](#ml-business-case)
@@ -95,9 +94,14 @@ The business requirements were discussed with the client .
 1. The client is interested in understanding the patterns from the heart disease database so that the client can learn the most relevant variables correlated to a positive heart desease prediction.
 2. The client is interested in determining if a patient would have heart disease or not.
 
-## The rationale to map the business requirements to the Data Visualizations and ML tasks
 
 ### Business Requirement 1: Data Visualization and Correlation study.
+
+As a client, I want to gain insights into the factors influencing a patient suffering from heart disease. To fulfill this requirement, the following user stories have been addressed:
+
+- As a client, I want to visually explore the heart disease dataset to identify important variables that are more correlated with a patient suffering from heart disease.
+- As a client, I want to read an analysis to understand the strength of the relationships between variables and the target.
+- As a client, I want to visualize the correlation between key variables and the target through interactive plots, enabling a better understanding of their impact.
 
 To answer the first business requirement a correlation study was used to find most correlated variable to the target.
 
@@ -120,8 +124,16 @@ Final features selected to train and fit model were actually a mix between the 2
 
 ### Business requirement 2: Predict Heart Disease
 
+
+As a client, I want to accurately predict if a patient will suffer from heart disease or not. To fulfill this requirement, the following user stories have been addressed:
+
+- As a client, I want to access and analyze the records and the features uded to train the model to understand which variable i need for an accurate prediction.
+- As a client I want to know which model, hyperparameter was used, and the different approach tried by the developer to reach final model.
+- As a client, I want to utilize the same machine learning model to predict if a patient will suffer from heart disease or not, and an estimated percentual from live data.
+
 Second business eequirement was answered building a ML model that predict if a patient will suffer from heart disease or not.
 Details of ML model found below.
+
 
 ## ML Business Case
 
