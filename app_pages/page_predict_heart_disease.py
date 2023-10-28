@@ -35,9 +35,11 @@ def page_predict_heart_disease_body():
     st.info(
         f"* This page contains an interface that allows the user"
         f" to interact with the pipeline and use the model to make live predictions. \n"
-        f" \n"
-        f"* This page completes the fulfilment of"
-        f" business requirement 2."
+    )
+
+    st.success(
+        f"Second business requirement was answered building a ML model that"
+        f" predict if a patient will suffer from heart disease or not ."
     )
 
     # show pipeline

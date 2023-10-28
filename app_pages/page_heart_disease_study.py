@@ -27,6 +27,9 @@ def heart_disease_body():
     vars_to_study_two = ['ca', 'cp', 'thal']
 
     st.write("## Feature Selection Study")
+    st.write(
+        f"This page will answer the first business requirement:"
+    )
     st.info(
         f"* The client is interested in understanding the patterns from the heart disease database "
         f"so that the client can learn the most relevant variables correlated "
@@ -45,19 +48,24 @@ def heart_disease_body():
     # Correlation Study Summary
     st.write("### Correlation Study")
     st.write(
-        f"A correlation study was conducted in the notebook to better understand how "
+        f"A correlation study was conducted to better understand how "
         f"the variables are correlated to the target. \n"
-        f" \n"
-        f"The most correlated variable are: **{vars_to_study}**"
     )
 
     # Text based on "03 - " Feature selection notebook - "Conclusions" section
     st.info(
-        f"After correlation analysis with pearson and spearman 5 important features where selected = \n"
+        f"Correlation analysis methods:\n"
+        f"* **Spearman** \n"
+        f"* **Pearson** \n"
+        f"* **Pps analysis** \n"
+        f" \n"
+        f"After spearman and pearson 5 variable in common were selected = \n"
         f" \n"
         f"'ca', 'cp', 'exang', 'oldpeak', 'thalach' \n"
         f" \n"
-        f"After pps heatmap analysis another important feature was found 'chol'. \n"
+        f"Another variable that had a high predictive power was considered after pps analysis: \n"
+        f" \n"
+        f"'chol'"
     )
 
     st.info(
@@ -125,6 +133,8 @@ def heart_disease_body():
         st.image(features_importance_plot)
 
     st.success(
+        f"The first business requirement was answered with conventional data analysis. \n"
+        f" \n"
         f"Final combination of features with best performance was actually a mix between the two study = \n"
         f" \n"
         f"* 'ca', 'cp', 'exang', 'oldpeak', 'thal', 'chol' \n"
