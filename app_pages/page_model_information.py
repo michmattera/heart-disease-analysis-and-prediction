@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
+import scipy.stats as stats
 import matplotlib.pyplot as plt
+from feature_engine.transformation import YeoJohnsonTransformer
 from src.data_management import load_heart_disease_data, load_pkl_file
 from src.machine_learning.evaluate_performance import clf_performance
 
@@ -57,6 +59,12 @@ def model_information_body():
     st.write(X_train)
     st.markdown("- Model hyperparameters: ")
     st.write(hyperparameters)
+    st.markdown("- Model transformation :")
+    if st.checkbox("Model transformation QQ plot"):
+        st.write(
+            f"Here you can see the difference of the variable before and after transformation, needed to reach better performance."
+        )
+        create_qq_plot()
 
     # show pipeline steps
     st.write("* **This is the final ML pipeline used to predict a heart disease**")
@@ -107,3 +115,35 @@ def model_information_body():
             f"Here you can see the classification report for the test set performance."
         )
         st.image(classification_report_image)
+
+
+# Code copy from FeatureEngineering notebook
+def create_qq_plot():
+    # Load data (replace with your data loading logic)
+    df = load_heart_disease_data()
+
+    variables_to_transform = ['cp', 'chol',
+                              'thalach', 'exang', 'oldpeak', 'ca']
+    # Create a transformer for Yeo-Johnson transformation
+    transformer = YeoJohnsonTransformer(variables=variables_to_transform)
+    transformed_data = transformer.fit_transform(df)
+
+    # Streamlit app
+    st.title("Q-Q Plot Visualization")
+
+    # Display Q-Q plots for original and transformed data
+    for variable in variables_to_transform:
+        original_data = df[variable]
+        transformed_variable = transformed_data[variable]
+
+        # Plot Q-Q plot for original data
+        plt.figure(figsize=(6, 4))
+        stats.probplot(original_data, dist='norm', plot=plt)
+        plt.title(f'Q-Q Plot for Original {variable}')
+        st.pyplot(plt)
+
+        # Plot Q-Q plot for transformed data
+        plt.figure(figsize=(6, 4))
+        stats.probplot(transformed_variable, dist='norm', plot=plt)
+        plt.title(f'Q-Q Plot for Transformed {variable}')
+        st.pyplot(plt)

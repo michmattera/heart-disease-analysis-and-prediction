@@ -1,14 +1,10 @@
 import streamlit as st
-import numpy as np
-import pandas as pd
 from feature_engine.discretisation import ArbitraryDiscretiser
-import streamlit as st
 from src.data_management import load_heart_disease_data
 from src.data_management import load_pkl_file
 from src.machine_learning.evaluate_performance import clf_performance
 from src.machine_learning.predictive_analysis import (
     predict_heart_disease)
-import matplotlib.pyplot as plt
 
 
 def page_hypothesis_and_validation_body():

@@ -1,11 +1,11 @@
+from src.data_management import load_heart_disease_data
+from feature_engine.discretisation import ArbitraryDiscretiser
 import streamlit as st
 import numpy as np
-from feature_engine.discretisation import ArbitraryDiscretiser
 import ppscore as pps
-from src.data_management import load_heart_disease_data
-
 import matplotlib.pyplot as plt
 import seaborn as sns
+import pandas as pd
 sns.set_style("whitegrid")
 
 
@@ -220,7 +220,6 @@ def heatmap_corr(df, threshold, figsize=(20, 12), font_annot=12):
 
 
 # code copied from "Feature selection notebook" - "Correlation Matrix" section
-# Increase font size (e.g., font_annot=12)
 def heatmap_pps(df, threshold, figsize=(20, 12), font_annot=12):
     if len(df.columns) > 1:
         mask = np.zeros_like(df, dtype=bool)
