@@ -2,6 +2,10 @@ import streamlit as st
 import pandas as pd
 import scipy.stats as stats
 import matplotlib.pyplot as plt
+from sklearn.pipeline import Pipeline
+from feature_engine.transformation import YeoJohnsonTransformer
+from sklearn.preprocessing import StandardScaler
+from xgboost import XGBClassifier
 from feature_engine.transformation import YeoJohnsonTransformer
 from src.data_management import load_heart_disease_data, load_pkl_file
 from src.machine_learning.evaluate_performance import clf_performance
@@ -11,10 +15,10 @@ def model_information_body():
 
     # Load all files
     version = "v3"
-    pipeline = load_pkl_file(
-        f"outputs/ml_pipeline/predict_heart_disease/{version}/xgbclassifier_pipeline.pkl")
     best_features = pd.read_csv(
         f"outputs/ml_pipeline/predict_heart_disease/{version}/X_train.csv").columns.to_list()
+    pipeline = load_pkl_file(
+        f"outputs/ml_pipeline/predict_heart_disease/{version}/xgbclassifier_pipeline.pkl")
     classification_report_image = plt.imread(
         f"outputs/ml_pipeline/predict_heart_disease/{version}/classification_report_3.png")
     X_train = pd.read_csv(
@@ -68,7 +72,13 @@ def model_information_body():
 
     # show pipeline steps
     st.write("* **This is the final ML pipeline used to predict a heart disease**")
-    st.write(pipeline)
+    st.code("""Pipeline([
+            ('YeoJohnsonTransformer', YeoJohnsonTransformer(variables=
+            ['cp', 'chol', 'thalach', 'exang', 'oldpeak', 'ca', 'thal'])),
+            ('feat_scaling', StandardScaler()),
+            ('model', XGBClassifier(random_state=0))
+        ])
+    """)
 
     # Model Performance section
     st.header("Model Performance")
@@ -147,3 +157,5 @@ def create_qq_plot():
         stats.probplot(transformed_variable, dist='norm', plot=plt)
         plt.title(f'Q-Q Plot for Transformed {variable}')
         st.pyplot(plt)
+
+

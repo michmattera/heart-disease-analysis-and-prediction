@@ -30,7 +30,6 @@ def page_predict_heart_disease_body():
         f"outputs/ml_pipeline/predict_heart_disease/{version}/y_test.csv").values
 
     st.write("## Heart Disease Predictor")
-
     st.info(
         f"* This page contains an interface that allows the user"
         f" to interact with the pipeline and use the model to make live predictions. \n"
@@ -47,7 +46,14 @@ def page_predict_heart_disease_body():
     st.write(" * The pipeline combine cleaning and feature engineering steps")
     st.write(" Model was trained with combination of features described"
              " in the feature selection study.")
-    st.write(pipeline)
+    # show pipeline steps
+    st.code("""Pipeline([
+            ('YeoJohnsonTransformer', YeoJohnsonTransformer(variables=
+            ['cp', 'chol', 'thalach', 'exang', 'oldpeak', 'ca', 'thal'])),
+            ('feat_scaling', StandardScaler()),
+            ('model', XGBClassifier(random_state=0))
+        ])
+    """)
 
     st.write("---")
 
