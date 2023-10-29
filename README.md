@@ -92,7 +92,7 @@ The client is a Global Health Organization that would like to investigate and pr
 The business requirements were discussed with the client .
 
 1. The client is interested in understanding the patterns from the heart disease database so that the client can learn the most relevant variables correlated to a positive heart desease prediction.
-2. The client is interested in determining if a patient would have heart disease or not.
+2. The client is interested in determining if a patient would suffer from heart disease or not.
 
 ### Business Requirement 1: Data Visualization and Correlation study.
 
@@ -100,7 +100,7 @@ As a client, I want to gain insights into the factors influencing a patient suff
 
 - As a client, I want to visually explore the heart disease dataset to identify important variables that are more correlated with a patient suffering from heart disease.
 - As a client, I want to read an analysis to understand the strength of the relationships between variables and the target.
-- As a client, I want to visualize the correlation between key variables and the target through interactive plots, enabling a better understanding of their impact.
+- As a client, I want to visualize the correlation between key variables and the target through  plots, enabling a better understanding of their impact.
 
 To answer the first business requirement a correlation study was used to find most correlated variable to the target.
 
@@ -119,7 +119,7 @@ Difference between the 2 sets of just 1 variable ['thal'].
 
 Final features selected to train and fit model were actually a mix between the 2:
 
-**'ca', 'cp', 'exang', 'oldpeak', 'thal', 'chol'**
+**'cp', 'chol', 'thalach', 'exang', 'oldpeak', 'ca', 'thal'**
 
 ### Business requirement 2: Predict Heart Disease
 
@@ -152,21 +152,23 @@ Details of ML model found below.
 7. **Performance Goal Criteria:**
 
    - The agreed-upon performance goal for the predictions is:
-     1. accuracy of at least 0.8 on both the train and test sets.
-     2. Precision of no disease of 0.85
-     3. Recall of Disease of 0.85
-   - All criteria were met in both train and test set.
+     1. Precision of 0.85.
+     2. Recall of 0.85
+     3. Accuracy of minimum 0.80 in both train and test set
+
+All criteria were met in both train and test set.
+
    - Train set :
 
-     1. Precision of no disease of 0.87
-     2. Recall of Disease of 0.91
-     3. Accuracy of 0.85
-
+     1. Precision of no disease of 0.93
+     2. Recall of Disease of 0.95
+     3. Accuracy of 0.87
+   
    - Test set :
 
-     1. Precision of no disease of 0.90
+     1. Precision of no disease of 0.97
      2. Recall of Disease of 0.93
-     3. Accuracy of 0.85
+     3. Accuracy of 0.90
 
     <details>
     <summary> Performance test set:</summary>
@@ -222,34 +224,34 @@ Below the heatmap report of the confusion test set using these 3 best features.
 ### Second model
 
 The second model was tried using the 6 best features, found with correlation analysis.
-But the performance dropped by almost 10% in all aspects, similar to the model with just 3 features. So it was not selected as best model.
+The performance was very similar to the one using all features, but developer tried to reach an even higher performance. So it was not selected as best model.
 
 - accuracy
 - recall
 - precision
 
-Below the heatmap report of the confusion test set using these 3 best features.
+Below the heatmap report of the confusion test set using these 6 best features.
 
 <details>
 <summary> Performance test set:</summary>
 
-![Heatmap confusion matrix test set 1](outputs/ml_pipeline/predict_heart_disease/v1/classification_report_1.png)
+![Heatmap confusion matrix test set 2](outputs/ml_pipeline/predict_heart_disease/v2/classification_report_2.png)
 
 </details>
 
 ### Final model information
 
-The final model was tried using 6 features, this combination of features was actually found mixing the two combination of features tried for the other models.
+The final model was tried using 7 features, this combination of features was actually found mixing the two combination of features tried for the other models.
 This was the model that perform very well, with a very low difference between this and the model used all features. Developer chose this as the best model.
 
 Below the heatmap report of the confusion test set using these 6 features:
 
-- 'ca', 'cp', 'exang', 'oldpeak', 'thal', 'chol'
+- **'cp', 'chol', 'thalach', 'exang', 'oldpeak', 'ca', 'thal'**
 
 <details>
-<summary> Performance test set:</summary>
+<summary> Final performance test set:</summary>
 
-![Heatmap confusion matrix test set 1](outputs/ml_pipeline/predict_heart_disease/v3/classification_report_3.png)
+![Heatmap confusion matrix final test set](outputs/ml_pipeline/predict_heart_disease/v3/classification_report_3.png)
 
 </details>
 
