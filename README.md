@@ -174,7 +174,7 @@ All criteria were met in both train and test set.
     <details>
     <summary> Performance test set:</summary>
 
-![Heatmap confusion matrix test set](outputs/ml_pipeline/predict_heart_disease/v3/classification_report_3.png)
+    ![Heatmap confusion matrix test set](outputs/ml_pipeline/predict_heart_disease/v3/classification_report_3.png)
 
     </details>
 
@@ -214,6 +214,7 @@ Below is the heatmap report of the confusion test set using these 3 best feature
 ![Heatmap confusion matrix test set 1](outputs/ml_pipeline/predict_heart_disease/v1/classification_report_1.png)
 
 </details>
+
 
 <details>
 <summary> Feature importance plot:</summary>
@@ -351,66 +352,66 @@ Most of the hypotheses were confirmed or not using conventional data analysis, i
 
 ## Main Data Analysis and Machine Learning Libraries
 
-altair==4.2.2 - Data visualization with a declarative syntax.
-astor==0.8.1 - Python abstract syntax tree (AST) manipulation.
-backports.zoneinfo==0.2.1 - Backport of Python 3.9's zoneinfo module.
-base58==2.1.1 - Base58 encoding for data serialization.
-blinker==1.6.2 - Fast and simple Python signal/event system.
-cachetools==5.3.1 - Caches for Python function calls.
-click==7.1.2 - A command-line interface creation kit.
-contourpy==1.0.7 - Contour plots for 2D data.
-cycler==0.11.0 - Composable cycle class for matplolib.
-dacite==1.8.1 - Data class boilerplate-free creation.
-entrypoints==0.4 - Discover and load entry points.
-feature-engine==1.6.0 - Feature engineering for machine learning.
-fonttools==4.39.4 - A library for manipulating fonts.
-htmlmin==0.1.12 - Minify HTML code.
-ImageHash==4.3.1 - Image hashing library.
-imbalanced-learn==0.10.1 - Toolbox for imbalanced dataset management.
-imblearn==0.0 - (Deprecated) Use imbalanced-learn instead.
-ipywidgets==8.0.6 - Interactive HTML widgets for Jupyter.
-joblib==1.2.0 - Lightweight pipelining in Python.
-jupyterlab-widgets==3.0.7 - JupyterLab widgets.
-kaggle==1.5.12 - Kaggle API client.
-kiwisolver==1.4.4 - Fast implementation of Kiwi.
-matplotlib==3.7.1 - Data visualization library.
-multimethod==1.9.1 - Single dispatch multimethods for Python.
-networkx==3.1 - Network analysis and manipulation.
-numpy==1.23.5 - Scientific computing with Python.
-pandas==1.5.3 - Data analysis and manipulation library.
-patsy==0.5.3 - Describing statistical models in Python.
-phik==0.12.3 - Correlations and patterns in data.
-Pillow==9.5.0 - Python Imaging Library (PIL fork).
-ppscore==1.3.0 - Predictive power score for feature evaluation.
-protobuf==3.20.0 - Protocol Buffers for Python.
-pyarrow==12.0.0 - Cross-language development platform.
-pydantic==1.10.8 - Data validation and parsing using Python type hints.
-pydeck==0.8.1b0 - Layered maps and data visualization.
-pyparsing==3.0.9 - Text parsing library.
-python-slugify==8.0.1 - Generates URL-friendly slugs.
-pytz==2023.3 - World time zone definitions.
-PyWavelets==1.4.1 - Wavelet transform in Python.
-scikit-learn==1.2.2 - Machine learning library for Python.
-scipy==1.10.1 - Scientific computing and technical computing.
-seaborn==0.12.2 - Data visualization library based on matplotlib.
-statsmodels==0.14.0 - Statistical models and tests.
-streamlit==0.85.0 - App framework for creating web apps.
-tangled-up-in-unicode==0.2.0 - Work with Python data and Unicode strings.
-text-unidecode==1.3 - Transliterate non-ASCII text.
-threadpoolctl==3.1.0 - Control the number of threads.
-toml==0.10.2 - Configuration file parsing in Python.
-toolz==0.12.0 - A set of utility functions for iterators.
-tqdm==4.65.0 - Progress bars for loops.
-typeguard==2.13.3 - Runtime type checking for Python.
-tzdata==2023.3 - Time zone database for Python.
-tzlocal==5.0.1 - Access the system's time zones.
-validators==0.20.0 - Data validation library.
-visions==0.7.5 - Automated feature engineering.
-watchdog==3.0.0 - File system events monitoring.
-widgetsnbextension==4.0.7 - IPython widgets extension for Jupyter.
-wordcloud==1.9.2 - Create word clouds from text.
-xgboost==1.7.5 - Scalable and accurate gradient boosting.
-ydata-profiling==4.2.0 - Automated data profiling and visualization.
+- altair==4.2.2 - Data visualization with a declarative syntax.
+- astor==0.8.1 - Python abstract syntax tree (AST) manipulation.
+- backports.zoneinfo==0.2.1 - Backport of Python 3.9's zoneinfo module.
+- base58==2.1.1 - Base58 encoding for data serialization.
+- blinker==1.6.2 - Fast and simple Python signal/event system.
+- cachetools==5.3.1 - Caches for Python function calls.
+- click==7.1.2 - A command-line interface creation kit.
+- contourpy==1.0.7 - Contour plots for 2D data.
+- cycler==0.11.0 - Composable cycle class for matplolib.
+- dacite==1.8.1 - Data class boilerplate-free creation.
+- entrypoints==0.4 - Discover and load entry points.
+- feature-engine==1.6.0 - Feature engineering for machine learning.
+- fonttools==4.39.4 - A library for manipulating fonts.
+- htmlmin==0.1.12 - Minify HTML code.
+- ImageHash==4.3.1 - Image hashing library.
+- imbalanced-learn==0.10.1 - Toolbox for imbalanced dataset management.
+- imblearn==0.0 - (Deprecated) Use imbalanced-learn instead.
+- ipywidgets==8.0.6 - Interactive HTML widgets for Jupyter.
+- joblib==1.2.0 - Lightweight pipelining in Python.
+- jupyterlab-widgets==3.0.7 - JupyterLab widgets.
+- kaggle==1.5.12 - Kaggle API client.
+- kiwisolver==1.4.4 - Fast implementation of Kiwi.
+- matplotlib==3.7.1 - Data visualization library.
+- multimethod==1.9.1 - Single dispatch multimethods for Python.
+- networkx==3.1 - Network analysis and manipulation.
+- numpy==1.23.5 - Scientific computing with Python.
+- pandas==1.5.3 - Data analysis and manipulation library.
+- patsy==0.5.3 - Describing statistical models in Python.
+- phik==0.12.3 - Correlations and patterns in data.
+- Pillow==9.5.0 - Python Imaging Library (PIL fork).
+- ppscore==1.3.0 - Predictive power score for feature evaluation.
+- protobuf==3.20.0 - Protocol Buffers for Python.
+- pyarrow==12.0.0 - Cross-language development platform.
+- pydantic==1.10.8 - Data validation and parsing using Python type hints.
+- pydeck==0.8.1b0 - Layered maps and data visualization.
+- pyparsing==3.0.9 - Text parsing library.
+- python-slugify==8.0.1 - Generates URL-friendly slugs.
+- pytz==2023.3 - World time zone definitions.
+- PyWavelets==1.4.1 - Wavelet transform in Python.
+- scikit-learn==1.2.2 - Machine learning library for Python.
+- scipy==1.10.1 - Scientific computing and technical computing.
+- seaborn==0.12.2 - Data visualization library based on matplotlib.
+- statsmodels==0.14.0 - Statistical models and tests.
+- streamlit==0.85.0 - App framework for creating web apps.
+- tangled-up-in-unicode==0.2.0 - Work with Python data and Unicode strings.
+- text-unidecode==1.3 - Transliterate non-ASCII text.
+- threadpoolctl==3.1.0 - Control the number of threads.
+- toml==0.10.2 - Configuration file parsing in Python.
+- toolz==0.12.0 - A set of utility functions for iterators.
+- tqdm==4.65.0 - Progress bars for loops.
+- typeguard==2.13.3 - Runtime type checking for Python.
+- tzdata==2023.3 - Time zone database for Python.
+- tzlocal==5.0.1 - Access the system's time zones.
+- validators==0.20.0 - Data validation library.
+- visions==0.7.5 - Automated feature engineering.
+- watchdog==3.0.0 - File system events monitoring.
+- widgetsnbextension==4.0.7 - IPython widgets extension for Jupyter.
+- wordcloud==1.9.2 - Create word clouds from text.
+- xgboost==1.7.5 - Scalable and accurate gradient boosting.
+- ydata-profiling==4.2.0 - Automated data profiling and visualization.
 
 ## Credits
 
