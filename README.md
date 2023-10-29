@@ -170,11 +170,10 @@ All criteria were met in both train and test set.
   2.  Recall of Disease of 0.93
   3.  Accuracy of 0.90
 
-
     <details>
     <summary> Performance test set:</summary>
 
-    ![Heatmap confusion matrix test set](outputs/ml_pipeline/predict_heart_disease/v3/classification_report_3.png)
+  ![Heatmap confusion matrix test set](outputs/ml_pipeline/predict_heart_disease/v3/classification_report_3.png)
 
     </details>
 
@@ -214,7 +213,6 @@ Below is the heatmap report of the confusion test set using these 3 best feature
 ![Heatmap confusion matrix test set 1](outputs/ml_pipeline/predict_heart_disease/v1/classification_report_1.png)
 
 </details>
-
 
 <details>
 <summary> Feature importance plot:</summary>
@@ -333,7 +331,8 @@ Most of the hypotheses were confirmed or not using conventional data analysis, i
 
 ## Unfixed Bugs
 
-- No bugs unfixed
+- Minor spelling mistakes can be found in notebook = When saving notebook and then adding , committing and pushing the file to github, file does not aave correctly. Developer tried more than 10 times, to wait, and then save, save directly , but always same error.
+  - Example of error can be found in [FeatureEngineering Notebook](https://github.com/michmattera/heart-disease-analysis-and-prediction/blob/main/jupyter_notebooks/FeatureEngineering.ipynb) in the section conclusion where even if developer reqrote it several times, it would not save correctly the variables and the steps.
 
 ## Deployment
 
