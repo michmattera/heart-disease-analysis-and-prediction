@@ -85,22 +85,22 @@ def model_information_body():
 
     st.success(
         f"**Train set :** \n"
-        f"* Precision of no disease of 0.87 \n"
-        f"* Recall of  Disease of 0.91 \n"
-        f"* Accuracy of 0.85 \n"
+        f"* Precision for No Disease is 0.93 \n"
+        f"* Recall of  Disease of 0.95 \n"
+        f"* Accuracy of 0.87 \n"
         f"\n"
         f"All of them passing the criterias set in the business requirement."
     )
 
     st.success(
         f"**Test set :** \n"
-        f"* Precision of no disease of 0.90 \n"
-        f"* Recall of  Disease of 0.93 \n"
-        f"* Accuracy of 0.85 \n"
+        f"* Precision for No Disease is 0.97 \n"
+        f"* Recall of  Disease of 0.98 \n"
+        f"* Accuracy of 0.90 \n"
         f"\n"
         f"All of them exeeding the criterias set in the business requirement,"
         f" with a higher media than the train set reaching at least 0.90"
-        f" in precision and recall."
+        f" in precision, recall and accuracy."
     )
 
     if st.checkbox("Confusion matrix for train and test set"):
@@ -123,7 +123,7 @@ def create_qq_plot():
     df = load_heart_disease_data()
 
     variables_to_transform = ['cp', 'chol',
-                              'thalach', 'exang', 'oldpeak', 'ca']
+                              'thalach', 'exang', 'oldpeak', 'ca', 'thal']
     # Create a transformer for Yeo-Johnson transformation
     transformer = YeoJohnsonTransformer(variables=variables_to_transform)
     transformed_data = transformer.fit_transform(df)

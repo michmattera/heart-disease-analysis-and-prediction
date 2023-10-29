@@ -53,7 +53,7 @@ def page_predict_heart_disease_body():
 
     # Insert 6 features to predict live
     st.write("### Predict if the patient will suffer or not from heart disease.  \n")
-    st.info("* Please enter the 6 features needed for prediction.")
+    st.info("* Please enter the 7 features needed for prediction.")
 
     # create input fields for live data
     X_live = InsertLiveData()
@@ -69,9 +69,9 @@ def InsertLiveData():
     percentageMin, percentageMax = 0.4, 2.0
 
     # we create input widgets for 6 features
-    # 'cp', 'chol','exang', 'oldpeak', 'ca', 'thal'
+    # 'cp', 'chol', 'thalach', 'exang', 'oldpeak', 'ca', 'thal'
     col1, col2, col3 = st.beta_columns(3)
-    col4, col5, col6 = st.beta_columns(3)
+    col4, col5, col6, col7 = st.beta_columns(4)
 
     # create an empty DataFrame, which will contain live data
     X_live = pd.DataFrame([], index=[0])
@@ -97,6 +97,17 @@ def InsertLiveData():
     X_live[feature] = streamlit_widget
 
     with col3:
+        feature = 'thalach'
+        streamlit_widget = st.number_input(
+            label=feature,
+            min_value=df[feature].min()*percentageMin,
+            max_value=df[feature].max()*percentageMax,
+            value=df[feature].median(),
+            key="thalach_number_input"
+        )
+    X_live[feature] = streamlit_widget
+
+    with col4:
         feature = 'exang'
         streamlit_widget = st.selectbox(
             label=feature,
@@ -105,7 +116,7 @@ def InsertLiveData():
         )
     X_live[feature] = streamlit_widget
 
-    with col4:
+    with col5:
         feature = 'oldpeak'
         streamlit_widget = st.number_input(
             label=feature,
@@ -116,7 +127,7 @@ def InsertLiveData():
         )
     X_live[feature] = streamlit_widget
 
-    with col5:
+    with col6:
         feature = 'ca'
         streamlit_widget = st.selectbox(
             label=feature,
@@ -125,7 +136,7 @@ def InsertLiveData():
         )
     X_live[feature] = streamlit_widget
 
-    with col6:
+    with col7:
         feature = 'thal'
         streamlit_widget = st.selectbox(
             label=feature,

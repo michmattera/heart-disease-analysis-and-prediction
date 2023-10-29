@@ -135,9 +135,9 @@ def heart_disease_body():
     st.success(
         f"The first business requirement was answered with conventional data analysis. \n"
         f" \n"
-        f"Final combination of features with best performance was actually a mix between the two study = \n"
+        f"Final combination of features ( Using all features from the two sets ) = \n"
         f" \n"
-        f"* 'ca', 'cp', 'exang', 'oldpeak', 'thal', 'chol' \n"
+        f"* 'cp', 'chol', 'thalach', 'exang', 'oldpeak', 'ca', 'thal' \n"
     )
 
     # Text based on "03 - " Feature selection notebook - "EDA" section
