@@ -331,7 +331,7 @@ Most of the hypotheses were confirmed or not using conventional data analysis, i
 
 ## Unfixed Bugs
 
-- Minor spelling mistakes can be found in notebook = When saving notebook and then adding , committing and pushing the file to github, file does not aave correctly. Developer tried more than 10 times, to wait, and then save, save directly , but always same error.
+- Minor spelling mistakes can be found in notebook = When saving notebook and then adding , committing and pushing the file to github, file does not save correctly. Developer tried more than 10 times, to wait, and then save, save directly , but always same error.
   - Example of error can be found in [FeatureEngineering Notebook](https://github.com/michmattera/heart-disease-analysis-and-prediction/blob/main/jupyter_notebooks/FeatureEngineering.ipynb) in the section conclusion where even if developer reqrote it several times, it would not save correctly the variables and the steps.
 
 ## Deployment
